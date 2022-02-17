@@ -28,7 +28,7 @@ function App() {
   // const classes = classNames("min-h-screen flex items-center", "bg-"+data.color)
 
   return (
-    <div className="min-h-screen flex items-center bg-indigo-500">
+    <div className="min-h-screen flex items-center bg-indigo-500 px-5">
       <Card data={data} getQuote={getNewQuoteHandler}></Card>
     </div>
   );
