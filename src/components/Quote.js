@@ -5,7 +5,7 @@ import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Quote = (props) => {
     return (
-        <div className="text-indigo-500">
+        <div>
             <blockquote className="flex items-start mb-4 space-x-2">
                 <FontAwesomeIcon icon={faQuoteLeft} color="inherit" size="2x" />
                 <p className="text-2xl text-center">{props.data.quote}</p>
