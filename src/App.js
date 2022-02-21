@@ -2,6 +2,11 @@ import { useState } from "react";
 import Card from "./components/Card";
 
 function App() {
+  const getRandomColor = () => {
+    const colors = ["#737373", "#ef4444", "#f97316", "#ca8a04", "#84cc16", "#10b981", "#0ea5e9", "#6366f1", "#d946ef", "#fb7185"]
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
   const [data, setData] = useState({
     quote: "Time is limited, so don't waste it living someone else's life.",
     author: "Steve Jobs",
@@ -22,14 +27,6 @@ function App() {
       console.log("Unexpected Error Occured")
     }
   }
-
-  const getRandomColor = () => {
-    const colors = ["#737373", "#ef4444", "#f97316", "#ca8a04", "#84cc16", "#10b981", "#0ea5e9", "#6366f1", "#d946ef", "#fb7185"]
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
-
-
-  // const classes = classNames("min-h-screen flex items-center", "bg-"+data.color)
 
   return (
     <div className="min-h-screen px-5 flex items-center" style={{backgroundColor: data.color, color:data.color}}>
