@@ -7,7 +7,7 @@ const Card = (props) => {
     return (
         <div className="px-10 py-9 bg-white rounded-md">
             <Quote data={props.data}></Quote>
-            <Buttons getQuote={props.getQuote} data={props.data}></Buttons>
+            <Buttons color={props.data.color} getQuote={props.getQuote} data={props.data}></Buttons>
         </div>
     );
 }

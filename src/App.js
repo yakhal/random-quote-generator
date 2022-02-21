@@ -4,7 +4,8 @@ import Card from "./components/Card";
 function App() {
   const [data, setData] = useState({
     quote: "Time is limited, so don't waste it living someone else's life.",
-    author: "Steve Jobs"
+    author: "Steve Jobs",
+    color: "#ec4899"
   })
 
   async function getNewQuoteHandler() {
@@ -12,23 +13,26 @@ function App() {
     const data = await response.json();
     if (response.ok) {
       const quote = {
+        quote: data.content,
         author: data.author,
-        content: data.content,
+        color: getRandomColor()
       };
-      console.log(quote)
-      setData({
-        quote: quote.content,
-        author: quote.author
-      })
+      setData(quote);
     } else {
       console.log("Unexpected Error Occured")
     }
   }
 
+  const getRandomColor = () => {
+    const colors = ["#737373", "#ef4444", "#f97316", "#ca8a04", "#84cc16", "#10b981", "#0ea5e9", "#6366f1", "#d946ef", "#fb7185"]
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+
   // const classes = classNames("min-h-screen flex items-center", "bg-"+data.color)
 
   return (
-    <div className="min-h-screen bg-indigo-500 px-5 flex items-center">
+    <div className="min-h-screen px-5 flex items-center" style={{backgroundColor: data.color, color:data.color}}>
       <div className="max-w-lg mx-auto">
         <h1 className="text-3xl text-center font-bold text-white mb-5 font-sans italic">PickQuotes</h1>
         <Card data={data} getQuote={getNewQuoteHandler}></Card>
