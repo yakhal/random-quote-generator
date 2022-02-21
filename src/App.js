@@ -10,7 +10,7 @@ function App() {
   const [data, setData] = useState({
     quote: "Time is limited, so don't waste it living someone else's life.",
     author: "Steve Jobs",
-    color: "#ec4899"
+    color: getRandomColor()
   })
 
   async function getNewQuoteHandler() {
