@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div className="min-h-screen px-5 flex items-center" style={{ backgroundColor: this.state.color, color: this.state.color }}>
         <div className="max-w-lg mx-auto">
-          <h1 className="text-3xl text-center font-bold text-white mb-5 font-sans italic">PickQuotes</h1>
+          <h1 className="text-3xl text-center font-bold text-white mb-5 font-serif">Pickquotes</h1>
           <Card data={this.state} getQuote={this.getNewQuoteHandler}></Card>
           <p className="italic text-sm text-white/80 text-center mt-4 ">By <a className="underline hover:no-underline" href="https://twitter.com/prakharrrastogi">Prakhar</a></p>
         </div>
